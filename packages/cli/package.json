@@ -10,7 +10,7 @@
     "dist"
   ],
   "bin": {
-    "my-cli-demo": "./bin/my"
+    "owncli": "./bin/owncli"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -23,6 +23,11 @@
   "devDependencies": {
     "@my/cli-core": "workspace:*",
     "@my/cli-shared": "workspace:*",
-    "tsup": "^8.5.1"
+    "tsup": "^8.5.1",
+    "@types/node": "^20.17.3",
+    "commander": "^12.1.0",
+    "consola": "3.4.2",
+    "picocolors": "^1.0.1",
+    "prompts": "2.4.1"
   }
 }
