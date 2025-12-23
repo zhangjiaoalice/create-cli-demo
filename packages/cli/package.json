@@ -1,0 +1,28 @@
+{
+  "name": "@my/cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "bin": {
+    "my-cli-demo": "./bin/my"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsup --watch",
+    "build": "tsup"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@my/cli-core": "workspace:*",
+    "@my/cli-shared": "workspace:*",
+    "tsup": "^8.5.1"
+  }
+}

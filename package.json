@@ -1,0 +1,38 @@
+{
+  "name": "my-cli",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "lint:es": "eslint \"{packages, apps}/**/*.ts\"",
+    "spellcheck": "cspell lint --dot --gitignore --color --cache --show-suggestions \"(packages|apps)/**/*.@(html|js|cjs|mjs|ts|tsx|css|scss|md)\"",
+    "lint": "npm run lint:es && npm run spellcheck",
+    "commit": "git-cz",
+    "prepare": "husky",
+    "pre-commit": "lint-staged"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-git"
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^9.9.0",
+    "typescript-eslint": "^8.1.0",
+    "@eslint/js": "^9.9.0",
+    "@typescript-eslint/eslint-plugin": "^8.1.0",
+    "eslint-plugin-simple-import-sort": "12.1.1",
+    "globals": "15.9.0",
+    "cspell": "^8.14.1",
+    "@commitlint/cli": "19.4.0",
+    "@commitlint/config-conventional": "19.2.2",
+    "husky": "9.1.4",
+    "commitizen": "4.3.0",
+    "cz-git": "1.9.4"
+  },
+  "packageManager": "pnpm@9.0.0"
+}

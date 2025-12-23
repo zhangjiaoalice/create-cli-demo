@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "target": "es2015",
+        "lib": [
+            "ESNext",
+            "DOM",
+        ],
+        "module": "esnext",
+        "moduleResolution": "node"
+    },
+    "include": [
+        "packages/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/node_modules",
+        "**/dist",
+    ]
+}
