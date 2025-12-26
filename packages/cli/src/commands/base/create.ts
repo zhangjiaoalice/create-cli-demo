@@ -2,6 +2,7 @@ import { Command } from "commander";
 import { logger } from "../../utils/logger";
 import pc from 'picocolors';
 import { loadTemplate } from "../../utils/loadTemplate";
+import prompts from 'prompts';
 
 /***
  * 命令行创建命令，用于创建项目，这个命令是我们开发命令中最复杂的一个命令，涉及的内容：
@@ -16,11 +17,31 @@ export function create(program: Command) {
     // 创建一个build 的command 的实例
     return program.createCommand("create")
     .description("创建项目")
-    .action(() => {
+    .arguments("<name>")
+    .option("-t, --template <template>", "template name")
+    .action(async (projectName, options) => {
+        let { template } = options;
+        if(!template) {
+            await prompts([
+                {
+                    type: 'select',
+                    name: 'template',
+                    message: '请选择模板',
+                    choices: [
+                        { title: 'vue-ts', value: 'vue-ts' },
+                        { title: 'vue-js', value: 'vue' },
+                        { title: 'react-ts', value: 'react-ts' },
+                        { title: 'react-js', value: 'react' },
+                    ],
+                },
+            ]).then((response) => {
+                template = response.template;
+            });
+        }
         // 初始化项目
         // 拉取模板
         // 加载本地模板、远程模板
-        logger.info(pc.bgRedBright('创建项目,拉取react-ts模板'));
-        loadTemplate('react-ts');
+        logger.info(pc.bgRedBright('创建项目,拉取模板'), projectName, template);
+        loadTemplate(projectName, template);
     });
 }
