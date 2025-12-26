@@ -54,3 +54,11 @@
 
 # tsup
 tsup 是一个 TypeScript 编译器和打包工具，用于编译和快速 TypeScript 项目。基于 esbuild, 以极快的速度和低配置实现对 TypeScript 文件的打包
+
+
+# cli工具开发常用依赖
+1. @types/node - Node.js 类型声明
+2. commander - 解析命令行参数的工具
+3. consola - 命令行工具输出
+4. picocolors - 命令行工具颜色
+5. prompts - 命令行工具交互
