@@ -32,6 +32,8 @@ export function create(program: Command) {
                         { title: 'vue-js', value: 'vue' },
                         { title: 'react-ts', value: 'react-ts' },
                         { title: 'react-js', value: 'react' },
+                        { title: 'vanilla', value: 'vanilla'},
+                        { title: 'vanilla-ts', value: 'vanilla-ts' }
                     ],
                 },
             ]).then((response) => {
